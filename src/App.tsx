@@ -261,6 +261,7 @@ export default function App() {
         settings={settings}
         isMemberPrice={isMemberPrice}
         onTogglePriceMode={() => setIsMemberPrice(!isMemberPrice)}
+        onSetPriceMode={setIsMemberPrice}
         totalTreatments={treatments.length}
         totalPromos={treatments.filter((t) => t.isNewPromo).length}
       />
