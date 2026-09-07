@@ -66,10 +66,16 @@
         <h2 class="text-2xl sm:text-3xl font-bold font-serif text-[#FBF1E2]" id="promoTitle">Merdeka Berani Glowing</h2>
         <p class="text-sm text-rose-100 mt-1" id="promoDesc">Cicilan 0% Menggunakan Paylater • Cashback hingga 500 RIBU • DP Booking Rp 50.000</p>
       </div>
-      <div class="flex items-center gap-2 bg-black/20 p-2 rounded-xl border border-white/10">
-        <button id="toggleMemberBtn" onclick="togglePriceMode()" class="px-4 py-2 rounded-lg text-xs font-bold transition bg-[#C9A86A] text-stone-900 shadow">
-          Harga Member Aktif
-        </button>
+      <div class="flex flex-col sm:flex-row items-center gap-2 bg-black/20 p-2 rounded-2xl border border-white/10">
+        <span class="text-[11px] text-rose-200 font-medium hidden sm:inline">Tampilan Harga:</span>
+        <div class="grid grid-cols-2 gap-1 bg-black/30 p-1 rounded-xl">
+          <button id="btnNonMember" type="button" onclick="setPriceMode(false)" class="px-3.5 py-1.5 rounded-lg text-xs font-bold transition text-rose-200 hover:text-white cursor-pointer">
+            Non-Member
+          </button>
+          <button id="btnMember" type="button" onclick="setPriceMode(true)" class="px-3.5 py-1.5 rounded-lg text-xs font-bold transition bg-[#C9A86A] text-stone-900 shadow cursor-pointer">
+            ⭐ Member
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -328,17 +334,24 @@
       }
     }
 
-    function togglePriceMode() {
-      isMemberPrice = !isMemberPrice;
-      var btn = document.getElementById('toggleMemberBtn');
-      if (isMemberPrice) {
-        btn.innerText = 'Harga Member Aktif';
-        btn.className = 'px-4 py-2 rounded-lg text-xs font-bold transition bg-[#C9A86A] text-stone-900 shadow';
-      } else {
-        btn.innerText = 'Harga Non-Member Aktif';
-        btn.className = 'px-4 py-2 rounded-lg text-xs font-bold transition bg-white/20 text-white shadow';
+    function setPriceMode(isMember) {
+      isMemberPrice = !!isMember;
+      var btnMember = document.getElementById('btnMember');
+      var btnNonMember = document.getElementById('btnNonMember');
+      if (btnMember && btnNonMember) {
+        if (isMemberPrice) {
+          btnMember.className = 'px-3.5 py-1.5 rounded-lg text-xs font-bold transition bg-[#C9A86A] text-stone-900 shadow cursor-pointer';
+          btnNonMember.className = 'px-3.5 py-1.5 rounded-lg text-xs font-bold transition text-rose-200 hover:text-white cursor-pointer';
+        } else {
+          btnMember.className = 'px-3.5 py-1.5 rounded-lg text-xs font-bold transition text-rose-200 hover:text-white cursor-pointer';
+          btnNonMember.className = 'px-3.5 py-1.5 rounded-lg text-xs font-bold transition bg-white text-[#6B1D2F] shadow cursor-pointer';
+        }
       }
       filterAndRenderTreatments();
+    }
+
+    function togglePriceMode() {
+      setPriceMode(!isMemberPrice);
     }
 
     function renderCategoryTabs() {
