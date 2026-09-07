@@ -6,6 +6,7 @@ interface PromoHeroProps {
   settings: ClinicSettings;
   isMemberPrice: boolean;
   onTogglePriceMode: () => void;
+  onSetPriceMode?: (isMember: boolean) => void;
   totalTreatments: number;
   totalPromos: number;
 }
@@ -14,9 +15,25 @@ export const PromoHero: React.FC<PromoHeroProps> = ({
   settings,
   isMemberPrice,
   onTogglePriceMode,
+  onSetPriceMode,
   totalTreatments,
   totalPromos,
 }) => {
+  const handleSelectMember = () => {
+    if (onSetPriceMode) {
+      onSetPriceMode(true);
+    } else if (!isMemberPrice) {
+      onTogglePriceMode();
+    }
+  };
+
+  const handleSelectNonMember = () => {
+    if (onSetPriceMode) {
+      onSetPriceMode(false);
+    } else if (isMemberPrice) {
+      onTogglePriceMode();
+    }
+  };
   return (
     <section className="relative overflow-hidden bg-gradient-to-r from-[#6B1D2F] via-[#7F2036] to-[#551424] text-white py-7 px-4 sm:px-6 shadow-inner">
       {/* Decorative Glow Elements */}
@@ -73,7 +90,7 @@ export const PromoHero: React.FC<PromoHeroProps> = ({
               <div className="grid grid-cols-2 gap-1.5 bg-black/25 p-1 rounded-xl">
                 <button
                   type="button"
-                  onClick={() => !isMemberPrice && onTogglePriceMode()}
+                  onClick={handleSelectNonMember}
                   className={`px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1 cursor-pointer ${
                     !isMemberPrice 
                       ? 'bg-white text-[#6B1D2F] shadow' 
@@ -84,7 +101,7 @@ export const PromoHero: React.FC<PromoHeroProps> = ({
                 </button>
                 <button
                   type="button"
-                  onClick={() => isMemberPrice && onTogglePriceMode()}
+                  onClick={handleSelectMember}
                   className={`px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1 cursor-pointer ${
                     isMemberPrice 
                       ? 'bg-[#C9A86A] text-stone-900 shadow' 
