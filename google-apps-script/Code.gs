@@ -75,18 +75,18 @@ function setupSpreadsheet() {
   formatHeader(sheetKat, headerBg, headerColor);
 
   var categoriesData = [
-    ["glowing-skin", "Glowing Skin", "Kombinasi laser, booster & peeling terkini untuk kulit cerah bercahaya.", "https://images.unsplash.com/photo-1512290900672-1f4f9f257a41?auto=format&fit=crop&w=1200&q=80", "Terpopuler", 1],
-    ["pink-plumpy", "Pink Plumpy", "Perawatan bibir & area mata agar tampak merona segar dan plumpy.", "https://images.unsplash.com/photo-1588515724527-074a7a56616c?auto=format&fit=crop&w=1200&q=80", "Trending", 2],
-    ["pigmentation", "Pigmentation & Melasma", "Solusi intensif melasma, flek hitam, dan hiperpigmentasi wajah & tubuh.", "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=80", "", 3],
-    ["anti-aging", "Anti-Aging & Lifting", "Rejuvenasi mendalam, collagen stimulator, HIFU Liftera2 & botox.", "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=80", "Best Value", 4],
-    ["acne-free", "Acne Free", "Program kuratif jerawat aktif, komedo, peradangan & kontrol sebum.", "https://images.unsplash.com/photo-1505944270255-72b8c68c6a70?auto=format&fit=crop&w=1200&q=80", "", 5],
-    ["scar-free", "Scar Free & Bopeng", "Laser CO2 Fractional, subsisi medis, PRP, dan Rejuran Scar.", "https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=1200&q=80", "Rekomendasi", 6],
-    ["face-slimming", "Face Slimming & V-Shape", "Membentuk kontur rahang V-Shape ideal & mengencangkan double chin.", "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=80", "", 7],
-    ["body-slimming", "Body Slimming & Contouring", "Meso Slim Premium, RF Body, Ultrasculpt, Lymph Drain & suplemen.", "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=80", "Best Seller", 8],
-    ["body-care", "Body Care & Brightening", "Pencerah ketiak, lipatan, punggung, kaki mulus bebas noda & infus.", "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80", "", 9],
-    ["thick-healthy-hair", "Thick & Healthy Hair", "Terapi rambut rontok, kebotakan dini, PRP Hair & Japanese Onsen Spa.", "https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=1200&q=80", "", 10],
-    ["botox", "Botox Standard & Premium", "Relaksasi kerutan dahi, crow feet, peramping masseter & ketiak.", "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=1200&q=80", "", 11],
-    ["hair-removal", "Hair Removal IPL & DPL", "Bebas bulu halus permanen tanpa sakit untuk underarm, kaki, bikini.", "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=80", "Unlimited", 12]
+    ["glowing-skin", "Glowing Skin", "Kombinasi laser, booster & peeling terkini untuk kulit cerah bercahaya.", "https://6a9e66ebb9f3f1e956cb206d.imgix.net/sandbox/Trial%202.JPG", "Terpopuler", 1],
+    ["pink-plumpy", "Pink Plumpy", "Perawatan bibir & area mata agar tampak merona segar dan plumpy.", "https://6a9e66ebb9f3f1e956cb206d.imgix.net/sandbox/Trial%202.JPG", "Trending", 2],
+    ["pigmentation", "Pigmentation & Melasma", "Solusi intensif melasma, flek hitam, dan hiperpigmentasi wajah & tubuh.", "https://6a9e66ebb9f3f1e956cb206d.imgix.net/sandbox/Trial%202.JPG", "", 3],
+    ["anti-aging", "Anti-Aging & Lifting", "Rejuvenasi mendalam, collagen stimulator, HIFU Liftera2 & botox.", "https://6a9e66ebb9f3f1e956cb206d.imgix.net/sandbox/Trial%202.JPG", "Best Value", 4],
+    ["acne-free", "Acne Free", "Program kuratif jerawat aktif, komedo, peradangan & kontrol sebum.", "https://6a9e66ebb9f3f1e956cb206d.imgix.net/sandbox/Trial%202.JPG", "", 5],
+    ["scar-free", "Scar Free & Bopeng", "Laser CO2 Fractional, subsisi medis, PRP, dan Rejuran Scar.", "https://6a9e66ebb9f3f1e956cb206d.imgix.net/sandbox/Trial%202.JPG", "Rekomendasi", 6],
+    ["face-slimming", "Face Slimming & V-Shape", "Membentuk kontur rahang V-Shape ideal & mengencangkan double chin.", "https://6a9e66ebb9f3f1e956cb206d.imgix.net/sandbox/Trial%202.JPG", "", 7],
+    ["body-slimming", "Body Slimming & Contouring", "Meso Slim Premium, RF Body, Ultrasculpt, Lymph Drain & suplemen.", "https://6a9e66ebb9f3f1e956cb206d.imgix.net/sandbox/Trial%202.JPG", "Best Seller", 8],
+    ["body-care", "Body Care & Brightening", "Pencerah ketiak, lipatan, punggung, kaki mulus bebas noda & infus.", "https://6a9e66ebb9f3f1e956cb206d.imgix.net/sandbox/Trial%202.JPG", "", 9],
+    ["thick-healthy-hair", "Thick & Healthy Hair", "Terapi rambut rontok, kebotakan dini, PRP Hair & Japanese Onsen Spa.", "https://6a9e66ebb9f3f1e956cb206d.imgix.net/sandbox/Trial%202.JPG", "", 10],
+    ["botox", "Botox Standard & Premium", "Relaksasi kerutan dahi, crow feet, peramping masseter & ketiak.", "https://6a9e66ebb9f3f1e956cb206d.imgix.net/sandbox/Trial%202.JPG", "", 11],
+    ["hair-removal", "Hair Removal IPL & DPL", "Bebas bulu halus permanen tanpa sakit untuk underarm, kaki, bikini.", "https://6a9e66ebb9f3f1e956cb206d.imgix.net/sandbox/Trial%202.JPG", "Unlimited", 12]
   ];
   sheetKat.getRange(2, 1, categoriesData.length, 6).setValues(categoriesData);
   sheetKat.autoResizeColumns(1, 6);
